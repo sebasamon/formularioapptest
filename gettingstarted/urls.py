@@ -12,7 +12,7 @@ import hello.views
 # Then add the new path:
 # path('blog/', blog.urls, name="blog")
 #
-# Learn more here: https://docs.djangoproject.com/en/2.1/topics/http/urls/
+# here: https://docs.djangoproject.com/en/2.1/topics/http/urls/
 
 urlpatterns = [
     path("", hello.views.index, name="index"),

@@ -6,7 +6,7 @@ from .views import index
 
 class SimpleTest(TestCase):
     def setUp(self):
-        # Every test needs access to the request factory.
+        # Every test access to the request factory.
         self.factory = RequestFactory()
 
     def test_details(self):

@@ -1,4 +1,4 @@
-# Python: Palma0
+# Python: Palma
 
 A barebones Django app, which can easily be deployed to Heroku.
 

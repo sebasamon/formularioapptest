@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Learn Palm Oil – Colombia</title>
+  <link rel="stylesheet" href="assets/styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <script defer src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <script defer src="assets/app.js"></script>
+</head>
+<body>
+  <header class="app-header" role="banner">
+    <div class="logo-group" tabindex="0">
+      <span class="logo-icon" aria-hidden="true">🌴</span>
+      <div>
+        <h1 id="app-title">Learn Palm Oil – Colombia</h1>
+        <p id="app-subtitle">Formación interactiva sobre palma de aceite</p>
+      </div>
+    </div>
+    <div class="header-actions">
+      <button id="lang-toggle" class="pill-button" aria-label="Cambiar idioma" title="Change language">EN</button>
+      <nav aria-label="Contenido principal">
+        <ul class="header-nav">
+          <li><a href="#overview" class="nav-link" id="nav-overview">¿Qué es?</a></li>
+          <li><a href="#data" class="nav-link" id="nav-data">Datos</a></li>
+          <li><a href="#map" class="nav-link" id="nav-map">Regiones</a></li>
+          <li><a href="#quiz" class="nav-link" id="nav-quiz">Quiz</a></li>
+          <li><a href="#glossary" class="nav-link" id="nav-glossary">Glosario</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content" tabindex="-1">
+    <section id="overview" class="section-card" aria-labelledby="overview-title">
+      <div class="section-header">
+        <span class="section-icon" aria-hidden="true">📘</span>
+        <h2 id="overview-title">¿Qué es la palma de aceite?</h2>
+      </div>
+      <div class="grid two-cols">
+        <article class="text-block" id="intro-text">
+          <h3 id="intro-heading">Origen y usos</h3>
+          <p id="intro-paragraph-1">
+            La palma de aceite (<em>Elaeis guineensis</em>) es un cultivo tropical que
+            produce el aceite vegetal más versátil del mundo. En Colombia se utiliza para alimentos,
+            cosméticos, biocombustibles y productos industriales.
+          </p>
+          <p id="intro-paragraph-2">
+            El país es el cuarto productor mundial y el primero en América Latina.
+            Su cadena de valor involucra a productores, extractoras, refinerías, fabricantes y exportadores.
+          </p>
+        </article>
+        <article class="text-block" id="learning-path">
+          <h3 id="learning-heading">Ruta de aprendizaje</h3>
+          <ol>
+            <li id="learning-step-1"><strong>Introducción:</strong> conceptos básicos y cifras clave.</li>
+            <li id="learning-step-2"><strong>Cadena de suministro:</strong> desde el cultivo hasta el consumidor.</li>
+            <li id="learning-step-3"><strong>Sostenibilidad:</strong> retos ambientales y sociales.</li>
+            <li id="learning-step-4"><strong>Explora:</strong> analiza datos y mapa interactivo.</li>
+            <li id="learning-step-5"><strong>Evalúate:</strong> responde el quiz para consolidar aprendizajes.</li>
+          </ol>
+        </article>
+      </div>
+    </section>
+
+    <section id="supply-chain" class="section-card" aria-labelledby="supply-title">
+      <div class="section-header">
+        <span class="section-icon" aria-hidden="true">🔄</span>
+        <h2 id="supply-title">Cadena de suministro</h2>
+      </div>
+      <div class="grid three-cols" id="supply-cards">
+        <article class="info-card" tabindex="0">
+          <h3 id="supply-1-title">Producción primaria</h3>
+          <p id="supply-1-text">Pequeños y grandes productores cosechan racimos de fruta fresca (RFF) durante todo el año.</p>
+        </article>
+        <article class="info-card" tabindex="0">
+          <h3 id="supply-2-title">Extracción</h3>
+          <p id="supply-2-text">Las extractoras separan el aceite crudo de palma (ACP) y el aceite de palmiste para refinación.</p>
+        </article>
+        <article class="info-card" tabindex="0">
+          <h3 id="supply-3-title">Refinación y mercado</h3>
+          <p id="supply-3-text">El aceite se refina para alimentos, oleoquímicos y biodiésel, abasteciendo mercado interno y exportaciones.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="sustainability" class="section-card" aria-labelledby="sustainability-title">
+      <div class="section-header">
+        <span class="section-icon" aria-hidden="true">🌱</span>
+        <h2 id="sustainability-title">Sostenibilidad</h2>
+      </div>
+      <div class="grid two-cols">
+        <article class="text-block" id="sustainability-pillars">
+          <h3 id="sustainability-pillars-title">Pilares</h3>
+          <ul>
+            <li id="pillar-1"><strong>Ambiental:</strong> conservación de biodiversidad, uso eficiente del agua y reducción de emisiones.</li>
+            <li id="pillar-2"><strong>Social:</strong> condiciones laborales justas, inclusión de pequeños productores, seguridad alimentaria.</li>
+            <li id="pillar-3"><strong>Económico:</strong> productividad, diversificación de ingresos y resiliencia ante precios.</li>
+          </ul>
+        </article>
+        <article class="text-block" id="sustainability-actions">
+          <h3 id="sustainability-actions-title">Acciones clave</h3>
+          <p id="sustainability-paragraph-1">Colombia impulsa certificaciones como RSPO y el sello nacional, promueve investigación en agricultura climáticamente inteligente y monitorea la deforestación.</p>
+          <p id="sustainability-paragraph-2">El diálogo con comunidades y transparencia en la trazabilidad refuerzan la reputación internacional del aceite colombiano.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="data" class="section-card" aria-labelledby="data-title">
+      <div class="section-header">
+        <span class="section-icon" aria-hidden="true">📊</span>
+        <h2 id="data-title">Explora los datos</h2>
+      </div>
+      <div class="controls" aria-label="Filtros de datos">
+        <label for="year-select" id="label-year">Año:</label>
+        <select id="year-select" aria-controls="chart-production chart-prices chart-exports">
+        </select>
+        <label for="region-select" id="label-region">Región palmera:</label>
+        <select id="region-select" aria-controls="chart-production chart-prices chart-exports">
+        </select>
+      </div>
+      <div class="grid three-cols responsive-two" aria-live="polite">
+        <canvas id="chart-production" aria-label="Producción de aceite por región"></canvas>
+        <canvas id="chart-area" aria-label="Área sembrada por región"></canvas>
+        <canvas id="chart-prices" aria-label="Precios promedio del aceite"></canvas>
+      </div>
+      <div class="grid two-cols responsive-one bottom-charts">
+        <canvas id="chart-exports" aria-label="Exportaciones de aceite por destino"></canvas>
+        <article class="text-block" id="insights-panel">
+          <h3 id="insights-title">Ideas clave</h3>
+          <ul id="insights-list"></ul>
+        </article>
+      </div>
+    </section>
+
+    <section id="map" class="section-card" aria-labelledby="map-title">
+      <div class="section-header">
+        <span class="section-icon" aria-hidden="true">🗺️</span>
+        <h2 id="map-title">Mapa interactivo</h2>
+      </div>
+      <div class="map-container" role="img" aria-label="Mapa de regiones palmeras de Colombia">
+        <svg viewBox="0 0 400 300" id="colombia-map">
+          <title>Regiones palmeras de Colombia</title>
+          <g class="region" data-region="Norte">
+            <path d="M60 40 L140 40 L140 140 L60 140 Z" tabindex="0"></path>
+            <text x="85" y="105">Norte</text>
+          </g>
+          <g class="region" data-region="Central">
+            <path d="M160 60 L230 60 L230 180 L160 180 Z" tabindex="0"></path>
+            <text x="175" y="135">Central</text>
+          </g>
+          <g class="region" data-region="Oriente">
+            <path d="M250 80 L340 80 L340 200 L250 200 Z" tabindex="0"></path>
+            <text x="265" y="155">Oriente</text>
+          </g>
+          <g class="region" data-region="Suroccidente">
+            <path d="M140 190 L240 190 L240 260 L140 260 Z" tabindex="0"></path>
+            <text x="150" y="235">Suroccidente</text>
+          </g>
+        </svg>
+        <aside class="map-details" id="map-details" aria-live="polite">
+          <h3 id="map-region-title">Selecciona una región</h3>
+          <p id="map-region-description">Haz clic o usa el teclado sobre una región para ver cifras destacadas.</p>
+          <ul id="map-region-stats"></ul>
+        </aside>
+      </div>
+    </section>
+
+    <section id="quiz" class="section-card" aria-labelledby="quiz-title">
+      <div class="section-header">
+        <span class="section-icon" aria-hidden="true">❓</span>
+        <h2 id="quiz-title">Quiz rápido</h2>
+      </div>
+      <div class="quiz-container" aria-live="polite">
+        <div id="quiz-question" class="quiz-question" tabindex="0"></div>
+        <div id="quiz-options" class="quiz-options" role="list"></div>
+        <button id="next-question" class="primary-button" disabled>Siguiente</button>
+        <div id="quiz-progress" class="quiz-progress" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <section id="glossary" class="section-card" aria-labelledby="glossary-title">
+      <div class="section-header">
+        <span class="section-icon" aria-hidden="true">📚</span>
+        <h2 id="glossary-title">Glosario</h2>
+      </div>
+      <dl id="glossary-list" class="glossary-list"></dl>
+    </section>
+  </main>
+
+  <footer class="app-footer" role="contentinfo">
+    <p id="footer-text">© 2024 Learn Palm Oil – Colombia. Datos demostrativos para aprendizaje.</p>
+    <a href="#main-content" class="nav-link" id="footer-back">Volver al inicio</a>
+  </footer>
+</body>
+</html>

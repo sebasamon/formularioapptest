@@ -1,0 +1,29 @@
+{
+  "mini_games": {
+    "pollination_catcher": {
+      "name": "Pollination Catcher",
+      "time_limit": 45,
+      "target_score": 25,
+      "spawn_interval": 0.8,
+      "optimal_window_start": 5,
+      "optimal_window_end": 30,
+      "description": "Move the collection net to capture as many pollen-carrying beetles as possible during the receptive window."
+    },
+    "fertilizer_mixer": {
+      "name": "Fertilizer Mixer",
+      "time_limit": 60,
+      "target_kg_per_ha": 160,
+      "tolerance": 8,
+      "bag_sizes": [10, 15, 20, 25],
+      "description": "Drag fertilizer bags until the combined dosage meets the target rate without exceeding tolerance."
+    },
+    "harvest_timing": {
+      "name": "Harvest Timing",
+      "time_limit": 50,
+      "target_accuracy": 0.85,
+      "max_bunches": 12,
+      "loose_fruit_threshold": 2,
+      "description": "Select ripe bunches showing the right color and loose fruit count while avoiding under- or overripe bunches."
+    }
+  }
+}

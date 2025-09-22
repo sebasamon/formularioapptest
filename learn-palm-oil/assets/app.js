@@ -6,6 +6,11 @@ const state = {
   quizScore: 0,
   quizAnswered: false,
   quizResponses: [],
+  gameStageIndex: 0,
+  gameScore: 0,
+  gameStageCompleted: false,
+  gameSelectedOption: null,
+  gameFeedbackType: null,
 };
 
 const dataStore = {
@@ -375,6 +380,220 @@ const dataStore = {
       ],
     },
   ],
+  game: [
+    {
+      id: 'nursery',
+      title: {
+        es: 'Etapa 1 · Vivero y establecimiento',
+        en: 'Stage 1 · Nursery & planting',
+      },
+      description: {
+        es: 'Te encuentras en el Meta planificando nuevas siembras. ¿Qué decisión asegura un lote vigoroso?',
+        en: 'You are in Meta planning new plantings. Which decision secures a vigorous field?',
+      },
+      fact: {
+        es: 'En 2023 el Oriente concentró cerca del 65% de las nuevas siembras, apoyado por viveros certificados que cuidan la genética adaptada al trópico colombiano.',
+        en: 'In 2023 the Eastern region hosted about 65% of new plantings, backed by certified nurseries that preserve genetics adapted to Colombia’s tropics.',
+      },
+      options: [
+        {
+          id: 'certified',
+          correct: true,
+          text: {
+            es: 'Seleccionar plántulas certificadas en suelos bien drenados tras analizar pH y nutrición.',
+            en: 'Select certified seedlings on well-drained soils after checking pH and nutrition.',
+          },
+          feedback: {
+            es: '¡Correcto! Los viveros certificados entregan híbridos resistentes y reducen pérdidas tempranas.',
+            en: 'Correct! Certified nurseries deliver resilient hybrids and reduce early losses.',
+          },
+        },
+        {
+          id: 'flooded',
+          correct: false,
+          text: {
+            es: 'Trasplantar semillas sin análisis previo en zonas con encharcamientos frecuentes.',
+            en: 'Transplant seeds without prior analysis in frequently waterlogged plots.',
+          },
+          feedback: {
+            es: 'El exceso de agua favorece enfermedades y limita el desarrollo radicular.',
+            en: 'Excess water favors diseases and limits root development.',
+          },
+        },
+        {
+          id: 'imported',
+          correct: false,
+          text: {
+            es: 'Usar semillas importadas sin soporte técnico ni trazabilidad.',
+            en: 'Use imported seeds without technical support or traceability.',
+          },
+          feedback: {
+            es: 'Sin trazabilidad no se asegura adaptación ni respaldo fitosanitario.',
+            en: 'Without traceability you cannot ensure adaptation or phytosanitary support.',
+          },
+        },
+      ],
+    },
+    {
+      id: 'harvest',
+      title: {
+        es: 'Etapa 2 · Manejo de cosecha',
+        en: 'Stage 2 · Harvest management',
+      },
+      description: {
+        es: 'Los racimos maduran en el Norte. ¿Qué práctica mantiene altos rendimientos?',
+        en: 'Bunches are ripening in the North. Which practice sustains high yields?',
+      },
+      fact: {
+        es: 'Los núcleos colombianos promediaron 3,0 t/ha de aceite en 2023; Oriente alcanzó 3,2 t/ha gracias a cosechas oportunas.',
+        en: 'Colombian clusters averaged 3.0 t/ha of oil in 2023, while Oriente reached 3.2 t/ha thanks to timely harvests.',
+      },
+      options: [
+        {
+          id: 'timely',
+          correct: true,
+          text: {
+            es: 'Programar cortes con 5-6 frutos sueltos y enviar la fruta al molino en menos de 24 horas.',
+            en: 'Harvest with 5–6 loose fruits and send bunches to the mill in under 24 hours.',
+          },
+          feedback: {
+            es: 'Exacto: así se conserva el contenido de aceite y se mejora el rendimiento industrial.',
+            en: 'Exactly: this preserves oil content and boosts industrial yield.',
+          },
+        },
+        {
+          id: 'delay',
+          correct: false,
+          text: {
+            es: 'Aplazar la cosecha hasta que caiga gran parte del racimo para optimizar mano de obra.',
+            en: 'Delay the harvest until most of the bunch falls to optimize labor.',
+          },
+          feedback: {
+            es: 'El fruto sobremaduro reduce el rendimiento de extracción y aumenta pérdidas.',
+            en: 'Overripe fruit lowers extraction rates and increases losses.',
+          },
+        },
+        {
+          id: 'immature',
+          correct: false,
+          text: {
+            es: 'Cortar racimos inmaduros para tener más volumen inmediato.',
+            en: 'Cut unripe bunches to gain immediate volume.',
+          },
+          feedback: {
+            es: 'Los racimos verdes contienen menos aceite y afectan la calidad del ACP.',
+            en: 'Green bunches hold less oil and harm CPO quality.',
+          },
+        },
+      ],
+    },
+    {
+      id: 'milling',
+      title: {
+        es: 'Etapa 3 · Extracción eficiente',
+        en: 'Stage 3 · Efficient milling',
+      },
+      description: {
+        es: 'En la extractora de Santander necesitas mejorar la eficiencia industrial. ¿Qué haces?',
+        en: 'At the Santander mill you need to improve industrial efficiency. What do you do?',
+      },
+      fact: {
+        es: 'Las extractoras colombianas alcanzan rendimientos industriales cercanos al 22% cuando reciben fruta fresca y mantienen un plan preventivo.',
+        en: 'Colombian mills reach industrial yields close to 22% when they receive fresh fruit and follow preventive plans.',
+      },
+      options: [
+        {
+          id: 'fresh',
+          correct: true,
+          text: {
+            es: 'Coordinar logística para recibir fruta fresca y ejecutar mantenimiento preventivo con monitoreo del OER.',
+            en: 'Coordinate logistics for fresh fruit and run preventive maintenance while tracking oil extraction rate (OER).',
+          },
+          feedback: {
+            es: '¡Bien! La fruta fresca y equipos calibrados sostienen OER altos y menos desperdicio.',
+            en: 'Great! Fresh fruit and calibrated equipment sustain high OER with less waste.',
+          },
+        },
+        {
+          id: 'sun',
+          correct: false,
+          text: {
+            es: 'Dejar los racimos al sol y procesarlos al final de la semana para ahorrar energía.',
+            en: 'Leave bunches under the sun and process them at week’s end to save energy.',
+          },
+          feedback: {
+            es: 'El retraso acelera la hidrólisis del aceite y genera ácidos grasos libres.',
+            en: 'Delays trigger oil hydrolysis and raise free fatty acids.',
+          },
+        },
+        {
+          id: 'skip',
+          correct: false,
+          text: {
+            es: 'Omitir limpieza y calibración de prensas para mantener la producción continua.',
+            en: 'Skip cleaning and calibration of presses to keep production continuous.',
+          },
+          feedback: {
+            es: 'Sin mantenimiento se pierde eficiencia y aumentan las paradas no programadas.',
+            en: 'Without maintenance efficiency drops and unplanned shutdowns grow.',
+          },
+        },
+      ],
+    },
+    {
+      id: 'market',
+      title: {
+        es: 'Etapa 4 · Mercado responsable',
+        en: 'Stage 4 · Responsible markets',
+      },
+      description: {
+        es: 'Buscas abrir nuevos mercados en 2023. ¿Cuál estrategia potencia la palma colombiana?',
+        en: 'You aim to open new markets in 2023. Which strategy strengthens Colombian palm oil?',
+      },
+      fact: {
+        es: 'En 2023 América alcanzó 37% de las exportaciones, acercándose a Europa (38%) gracias a trazabilidad y certificaciones como RSPO y el sello colombiano de palma sostenible.',
+        en: 'In 2023 America captured 37% of exports, close to Europe’s 38%, thanks to traceability and certifications such as RSPO and Colombia’s sustainable palm seal.',
+      },
+      options: [
+        {
+          id: 'traceability',
+          correct: true,
+          text: {
+            es: 'Implementar trazabilidad digital y certificaciones RSPO y sello colombiano para compradores exigentes.',
+            en: 'Deploy digital traceability plus RSPO and the Colombian sustainable palm seal for demanding buyers.',
+          },
+          feedback: {
+            es: 'Así respondes a mercados que exigen sostenibilidad y mantienes primas en exportación.',
+            en: 'That answers markets demanding sustainability and keeps export premiums.',
+          },
+        },
+        {
+          id: 'singlebuyer',
+          correct: false,
+          text: {
+            es: 'Concentrar ventas en un solo cliente sin reportes ambientales.',
+            en: 'Concentrate sales on a single buyer with no environmental reporting.',
+          },
+          feedback: {
+            es: 'Depender de un cliente reduce resiliencia y puede cerrar mercados regulados.',
+            en: 'Relying on one buyer lowers resilience and can close regulated markets.',
+          },
+        },
+        {
+          id: 'cut',
+          correct: false,
+          text: {
+            es: 'Reducir costos eliminando auditorías y los acuerdos con comunidades.',
+            en: 'Cut costs by removing audits and community agreements.',
+          },
+          feedback: {
+            es: 'Las auditorías y el diálogo social son claves para la licencia social y la reputación.',
+            en: 'Audits and social dialogue are key for social license and reputation.',
+          },
+        },
+      ],
+    },
+  ],
 };
 
 const regionTranslations = {
@@ -388,6 +607,7 @@ const translations = {
   es: {
     subtitle: 'Formación interactiva sobre palma de aceite',
     navOverview: '¿Qué es?',
+    navGame: 'Juego',
     navData: 'Datos',
     navMap: 'Regiones',
     navQuiz: 'Quiz',
@@ -421,6 +641,16 @@ const translations = {
     labelYear: 'Año:',
     labelRegion: 'Región palmera:',
     insightsTitle: 'Ideas clave',
+    gameTitle: 'Expedición palmera',
+    gameIntro: 'Elige las mejores decisiones para fortalecer la palma colombiana.',
+    gameNext: 'Siguiente etapa',
+    gameFinish: 'Ver resumen',
+    gameRestart: 'Reiniciar',
+    gameProgress: (current, total) => `Etapa ${current} de ${total}`,
+    gameScore: (score, total) => `Logros: ${score}/${total}`,
+    gameSummaryTitle: 'Resumen de tu expedición',
+    gameSummaryBody: (score, total) => `Cerraste la misión con ${score} de ${total} decisiones correctas. ¡Tu gestión impulsa la palma sostenible en Colombia!`,
+    gameCompleted: 'Misión completada',
     mapTitle: 'Mapa interactivo',
     mapRegionTitle: 'Selecciona una región',
     mapRegionDescription: 'Haz clic o usa el teclado sobre una región para ver cifras destacadas.',
@@ -437,6 +667,7 @@ const translations = {
   en: {
     subtitle: 'Interactive training about palm oil',
     navOverview: 'Overview',
+    navGame: 'Game',
     navData: 'Data',
     navMap: 'Regions',
     navQuiz: 'Quiz',
@@ -470,6 +701,16 @@ const translations = {
     labelYear: 'Year:',
     labelRegion: 'Palm region:',
     insightsTitle: 'Key takeaways',
+    gameTitle: 'Palm expedition',
+    gameIntro: 'Choose the best decisions to strengthen Colombia’s palm value chain.',
+    gameNext: 'Next stage',
+    gameFinish: 'View summary',
+    gameRestart: 'Restart',
+    gameProgress: (current, total) => `Stage ${current} of ${total}`,
+    gameScore: (score, total) => `Achievements: ${score}/${total}`,
+    gameSummaryTitle: 'Your expedition recap',
+    gameSummaryBody: (score, total) => `You completed ${score} of ${total} key decisions. Your management boosts Colombia’s sustainable palm oil!`,
+    gameCompleted: 'Mission accomplished',
     mapTitle: 'Interactive map',
     mapRegionTitle: 'Select a region',
     mapRegionDescription: 'Click or use the keyboard on a region to see highlighted metrics.',
@@ -491,6 +732,7 @@ document.addEventListener('DOMContentLoaded', () => {
   populateSelectors();
   buildGlossary();
   setupQuiz();
+  setupGame();
   setupMapInteractions();
   initCharts();
   bindEvents();
@@ -543,6 +785,174 @@ function setupQuiz() {
   state.quizAnswered = false;
   state.quizResponses = new Array(dataStore.quiz.length).fill(null);
   renderQuizQuestion();
+}
+
+function setupGame() {
+  const optionsContainer = document.getElementById('game-options');
+  const nextButton = document.getElementById('game-next');
+  const restartButton = document.getElementById('game-restart');
+  if (!optionsContainer || !nextButton || !restartButton) return;
+
+  state.gameStageIndex = 0;
+  state.gameScore = 0;
+  state.gameStageCompleted = false;
+  state.gameSelectedOption = null;
+  state.gameFeedbackType = null;
+
+  optionsContainer.addEventListener('click', (event) => {
+    const button = event.target.closest('button[data-option-id]');
+    if (!button || button.disabled) return;
+    handleGameOption(button.dataset.optionId);
+  });
+
+  nextButton.addEventListener('click', () => {
+    if (!state.gameStageCompleted) return;
+    const totalStages = dataStore.game.length;
+    if (state.gameStageIndex < totalStages - 1) {
+      state.gameStageIndex += 1;
+      state.gameStageCompleted = false;
+      state.gameSelectedOption = null;
+      state.gameFeedbackType = null;
+      renderGameStage();
+    } else if (state.gameStageIndex === totalStages - 1) {
+      state.gameStageIndex += 1;
+      renderGameStage();
+    }
+  });
+
+  restartButton.addEventListener('click', () => {
+    resetGame();
+  });
+
+  renderGameStage();
+}
+
+function handleGameOption(optionId) {
+  const stage = dataStore.game[state.gameStageIndex];
+  if (!stage) return;
+  const option = stage.options.find((item) => item.id === optionId);
+  if (!option) return;
+
+  state.gameSelectedOption = optionId;
+  state.gameFeedbackType = option.correct ? 'correct' : 'incorrect';
+
+  if (option.correct && !state.gameStageCompleted) {
+    state.gameStageCompleted = true;
+    state.gameScore += 1;
+  } else if (!option.correct) {
+    state.gameStageCompleted = false;
+  }
+
+  renderGameStage();
+}
+
+function resetGame() {
+  state.gameStageIndex = 0;
+  state.gameScore = 0;
+  state.gameStageCompleted = false;
+  state.gameSelectedOption = null;
+  state.gameFeedbackType = null;
+  renderGameStage();
+}
+
+function renderGameStage() {
+  const stageTitle = document.getElementById('game-stage-title');
+  const stageDescription = document.getElementById('game-stage-description');
+  const factElement = document.getElementById('game-stage-fact');
+  const optionsContainer = document.getElementById('game-options');
+  const feedbackElement = document.getElementById('game-feedback');
+  const nextButton = document.getElementById('game-next');
+  const restartButton = document.getElementById('game-restart');
+  const progressBar = document.getElementById('game-progress-bar');
+  const progressText = document.getElementById('game-progress-text');
+  const scoreText = document.getElementById('game-score-text');
+  if (!stageTitle || !stageDescription || !optionsContainer || !feedbackElement || !nextButton || !restartButton || !progressBar || !progressText || !scoreText || !factElement) {
+    return;
+  }
+
+  const totalStages = dataStore.game.length;
+  const currentTranslations = translations[state.lang];
+  scoreText.textContent = currentTranslations.gameScore(state.gameScore, totalStages);
+  restartButton.textContent = currentTranslations.gameRestart;
+
+  if (state.gameStageIndex >= totalStages) {
+    progressBar.style.width = '100%';
+    progressText.textContent = currentTranslations.gameCompleted;
+    nextButton.textContent = currentTranslations.gameFinish;
+    nextButton.classList.add('hidden');
+    nextButton.disabled = true;
+    factElement.hidden = true;
+    factElement.textContent = '';
+    stageTitle.textContent = currentTranslations.gameSummaryTitle;
+    stageDescription.textContent = currentTranslations.gameSummaryBody(state.gameScore, totalStages);
+    optionsContainer.innerHTML = '';
+    const summaryList = document.createElement('ul');
+    summaryList.className = 'game-summary-list';
+    dataStore.game.forEach((stageItem) => {
+      const listItem = document.createElement('li');
+      listItem.textContent = stageItem.fact[state.lang];
+      summaryList.appendChild(listItem);
+    });
+    optionsContainer.appendChild(summaryList);
+    feedbackElement.textContent = '';
+    feedbackElement.className = 'game-feedback';
+    return;
+  }
+
+  nextButton.classList.remove('hidden');
+  restartButton.disabled = false;
+
+  const stage = dataStore.game[state.gameStageIndex];
+  stageTitle.textContent = stage.title[state.lang];
+  stageDescription.textContent = stage.description[state.lang];
+
+  if (state.gameStageCompleted) {
+    factElement.hidden = false;
+    factElement.textContent = stage.fact[state.lang];
+  } else {
+    factElement.hidden = true;
+    factElement.textContent = '';
+  }
+
+  const solvedOffset = state.gameStageCompleted ? 1 : 0;
+  const progressRatio = Math.min((state.gameStageIndex + solvedOffset) / totalStages, 1);
+  progressBar.style.width = `${progressRatio * 100}%`;
+  progressText.textContent = currentTranslations.gameProgress(state.gameStageIndex + 1, totalStages);
+
+  nextButton.textContent = state.gameStageIndex === totalStages - 1 ? currentTranslations.gameFinish : currentTranslations.gameNext;
+  nextButton.disabled = !state.gameStageCompleted;
+
+  optionsContainer.innerHTML = '';
+  stage.options.forEach((option) => {
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.className = 'game-option';
+    button.dataset.optionId = option.id;
+    button.textContent = option.text[state.lang];
+    if (state.gameStageCompleted) {
+      button.disabled = true;
+      if (option.correct) {
+        button.classList.add('correct');
+      }
+    } else if (state.gameSelectedOption === option.id && state.gameFeedbackType === 'incorrect') {
+      button.classList.add('incorrect');
+    }
+    optionsContainer.appendChild(button);
+  });
+
+  if (state.gameSelectedOption) {
+    const selectedOption = stage.options.find((opt) => opt.id === state.gameSelectedOption);
+    if (selectedOption) {
+      feedbackElement.textContent = selectedOption.feedback[state.lang];
+      feedbackElement.className = `game-feedback ${selectedOption.correct ? 'success' : 'error'}`;
+    } else {
+      feedbackElement.textContent = '';
+      feedbackElement.className = 'game-feedback';
+    }
+  } else {
+    feedbackElement.textContent = '';
+    feedbackElement.className = 'game-feedback';
+  }
 }
 
 function setupMapInteractions() {
@@ -682,6 +1092,7 @@ function updateLanguage() {
   const textBindings = [
     ['app-subtitle', 'subtitle'],
     ['nav-overview', 'navOverview'],
+    ['nav-game', 'navGame'],
     ['nav-data', 'navData'],
     ['nav-map', 'navMap'],
     ['nav-quiz', 'navQuiz'],
@@ -707,6 +1118,8 @@ function updateLanguage() {
     ['glossary-title', 'glossaryTitle'],
     ['footer-text', 'footerText'],
     ['footer-back', 'footerBack'],
+    ['game-title', 'gameTitle'],
+    ['game-intro', 'gameIntro'],
   ];
   textBindings.forEach(([elementId, key]) => {
     const element = document.getElementById(elementId);
@@ -768,6 +1181,8 @@ function updateLanguage() {
   langToggle.textContent = state.lang === 'es' ? 'EN' : 'ES';
   langToggle.setAttribute('aria-label', translations[state.lang].langToggleLabel);
   langToggle.title = translations[state.lang].langToggleLabel;
+
+  renderGameStage();
 }
 
 function selectRegion(region, fromMap = true) {

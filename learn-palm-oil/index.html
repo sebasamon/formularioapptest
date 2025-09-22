@@ -25,6 +25,7 @@
       <nav aria-label="Contenido principal">
         <ul class="header-nav">
           <li><a href="#overview" class="nav-link" id="nav-overview">¿Qué es?</a></li>
+          <li><a href="#game" class="nav-link" id="nav-game">Juego</a></li>
           <li><a href="#data" class="nav-link" id="nav-data">Datos</a></li>
           <li><a href="#map" class="nav-link" id="nav-map">Regiones</a></li>
           <li><a href="#quiz" class="nav-link" id="nav-quiz">Quiz</a></li>
@@ -106,6 +107,34 @@
           <p id="sustainability-paragraph-1">Colombia impulsa certificaciones como RSPO y el sello nacional, promueve investigación en agricultura climáticamente inteligente y monitorea la deforestación.</p>
           <p id="sustainability-paragraph-2">El diálogo con comunidades y transparencia en la trazabilidad refuerzan la reputación internacional del aceite colombiano.</p>
         </article>
+      </div>
+    </section>
+
+    <section id="game" class="section-card" aria-labelledby="game-title">
+      <div class="section-header">
+        <span class="section-icon" aria-hidden="true">🎮</span>
+        <h2 id="game-title">Expedición palmera</h2>
+      </div>
+      <p id="game-intro" class="game-intro">Elige las mejores decisiones para fortalecer la palma colombiana.</p>
+      <div class="game-container">
+        <div class="game-progress" aria-hidden="true">
+          <div class="game-progress-bar" id="game-progress-bar"></div>
+        </div>
+        <div class="game-meta">
+          <span id="game-progress-text" class="game-progress-text"></span>
+          <span id="game-score-text" class="game-score-text"></span>
+        </div>
+        <article class="game-stage" aria-live="polite">
+          <h3 id="game-stage-title"></h3>
+          <p id="game-stage-description"></p>
+          <p id="game-stage-fact" class="game-stage-fact" hidden></p>
+        </article>
+        <div id="game-options" class="game-options" role="list"></div>
+        <div id="game-feedback" class="game-feedback" aria-live="polite"></div>
+        <div class="game-actions">
+          <button id="game-next" class="primary-button" type="button" disabled>Siguiente etapa</button>
+          <button id="game-restart" class="pill-button" type="button">Reiniciar</button>
+        </div>
       </div>
     </section>
 

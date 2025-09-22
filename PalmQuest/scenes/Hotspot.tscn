@@ -1,0 +1,45 @@
+[gd_scene load_steps=5 format=3]
+
+[ext_resource type="Script" path="res://scripts/hotspot.gd" id="1"]
+
+[sub_resource type="SphereShape3D" id="1"]
+radius = 1.6
+
+[sub_resource type="CylinderMesh" id="2"]
+height = 2.5
+radius = 0.5
+
+[sub_resource type="StandardMaterial3D" id="3"]
+albedo_color = Color(0.2, 0.6, 0.2, 0.3)
+emission_enabled = true
+emission = Color(0.2, 0.7, 0.3)
+emission_energy = 1.5
+
+[node name="Hotspot" type="Area3D"]
+script = ExtResource("1")
+monitorable = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("1")
+
+[node name="GlowMesh" type="MeshInstance3D" parent="."]
+mesh = SubResource("2")
+material_override = SubResource("3")
+transform = Transform3D(Basis(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107), Vector3(0, 1.25, 0))
+
+[node name="Billboard" type="Node3D" parent="."]
+transform = Transform3D(Basis(1, 0, 0, 0, 1, 0, 0, 0, 1), Vector3(0, 2.0, 0))
+
+[node name="Label3D" type="Label3D" parent="Billboard"]
+text = "Hotspot"
+billboard = 1
+vertical_alignment = 2
+modulate = Color(0.95, 0.95, 0.95, 1)
+
+[node name="Prompt" type="Label3D" parent="Billboard"]
+transform = Transform3D(Basis(1, 0, 0, 0, 1, 0, 0, 0, 1), Vector3(0, -0.5, 0))
+text = "Press E"
+billboard = 1
+visible = false
+modulate = Color(0.9, 0.7, 0.2, 1)
+

@@ -1,0 +1,24 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:  https://docs.godotengine.org/en/latest/tutorials/io/resource_format.html
+
+config_version=5
+
+[application]
+config/name="PalmQuest 8bit"
+run/main_scene="res://scenes/main.tscn"
+config/icon=""
+
+[rendering]
+renderer/rendering_method="mobile"
+renderer/rendering_device="cpu"
+textures/canvas_textures/default_filter=false
+
+[input]
+move_up={"deadzone":0.5,"events":[{"type":"key","physical_scancode":87},{"type":"key","physical_scancode":16777232}]}
+move_down={"deadzone":0.5,"events":[{"type":"key","physical_scancode":83},{"type":"key","physical_scancode":16777234}]}
+move_left={"deadzone":0.5,"events":[{"type":"key","physical_scancode":65},{"type":"key","physical_scancode":16777231}]}
+move_right={"deadzone":0.5,"events":[{"type":"key","physical_scancode":68},{"type":"key","physical_scancode":16777233}]}
+interact={"deadzone":0.5,"events":[{"type":"key","physical_scancode":69},{"type":"key","physical_scancode":32}]}

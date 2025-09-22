@@ -1,0 +1,110 @@
+[gd_scene load_steps=9 format=3]
+
+[ext_resource type="Script" path="res://scripts/level.gd" id="1"]
+[ext_resource type="Script" path="res://scripts/player.gd" id="2"]
+[ext_resource type="Script" path="res://scripts/hotspot.gd" id="3"]
+
+[sub_resource type="RectangleShape2D" id="1"]
+extents = Vector2(8, 8)
+
+[sub_resource type="CircleShape2D" id="2"]
+radius = 12.0
+
+[sub_resource type="RectangleShape2D" id="3"]
+extents = Vector2(160, 8)
+
+[sub_resource type="RectangleShape2D" id="4"]
+extents = Vector2(8, 120)
+
+[node name="Level" type="Node2D"]
+script = ExtResource("1")
+
+[node name="TileMap" type="TileMap" parent="."]
+position = Vector2(0, 0)
+
+[node name="Player" type="CharacterBody2D" parent="."]
+script = ExtResource("2")
+position = Vector2(160, 120)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+shape = SubResource("1")
+
+[node name="Hotspots" type="Node2D" parent="."]
+
+[node name="HotspotPolinizacion" type="Area2D" parent="Hotspots"]
+script = ExtResource("3")
+hotspot_id = "polinizacion"
+title = "Polinización"
+description = "Aprende cómo los insectos ayudan a transportar el polen entre flores."
+position = Vector2(80, 60)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hotspots/HotspotPolinizacion"]
+shape = SubResource("2")
+
+[node name="Marker" type="Sprite2D" parent="Hotspots/HotspotPolinizacion"]
+modulate = Color(0.9, 0.7, 0.2, 1)
+
+[node name="HotspotFertilizacion" type="Area2D" parent="Hotspots"]
+script = ExtResource("3")
+hotspot_id = "fertilizacion"
+title = "Fertilización"
+description = "Descubre cuándo y cómo aplicar nutrientes para un crecimiento vigoroso."
+position = Vector2(240, 60)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hotspots/HotspotFertilizacion"]
+shape = SubResource("2")
+
+[node name="Marker" type="Sprite2D" parent="Hotspots/HotspotFertilizacion"]
+modulate = Color(0.5, 0.8, 0.2, 1)
+
+[node name="HotspotCalendario" type="Area2D" parent="Hotspots"]
+script = ExtResource("3")
+hotspot_id = "calendario"
+title = "Calendario"
+description = "Organiza labores clave del cultivo según temporada y necesidades."
+position = Vector2(80, 180)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hotspots/HotspotCalendario"]
+shape = SubResource("2")
+
+[node name="Marker" type="Sprite2D" parent="Hotspots/HotspotCalendario"]
+modulate = Color(0.3, 0.7, 0.4, 1)
+
+[node name="HotspotProduccion" type="Area2D" parent="Hotspots"]
+script = ExtResource("3")
+hotspot_id = "produccion"
+title = "Producción"
+description = "Registra rendimientos para mejorar la toma de decisiones y ventas."
+position = Vector2(240, 180)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hotspots/HotspotProduccion"]
+shape = SubResource("2")
+
+[node name="Marker" type="Sprite2D" parent="Hotspots/HotspotProduccion"]
+modulate = Color(0.2, 0.6, 0.5, 1)
+
+[node name="Boundaries" type="Node2D" parent="."]
+
+[node name="Top" type="StaticBody2D" parent="Boundaries"]
+position = Vector2(160, 16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries/Top"]
+shape = SubResource("3")
+
+[node name="Bottom" type="StaticBody2D" parent="Boundaries"]
+position = Vector2(160, 224)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries/Bottom"]
+shape = SubResource("3")
+
+[node name="Left" type="StaticBody2D" parent="Boundaries"]
+position = Vector2(16, 120)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries/Left"]
+shape = SubResource("4")
+
+[node name="Right" type="StaticBody2D" parent="Boundaries"]
+position = Vector2(304, 120)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries/Right"]
+shape = SubResource("4")

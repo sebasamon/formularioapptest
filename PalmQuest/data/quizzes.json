@@ -1,0 +1,168 @@
+{
+  "zones": {
+    "pollination": {
+      "title": "Pollination Zone Quiz",
+      "pass_score": 4,
+      "questions": [
+        {
+          "id": "pollination_window",
+          "prompt": "How long does a female inflorescence remain receptive to effective pollination?",
+          "options": ["About 12 hours", "Around two dawns", "A full week", "Until the next pruning round"],
+          "correct_index": 1,
+          "explanation": "Female inflorescences present receptive stigmas for roughly two dawn periods, making timing critical."
+        },
+        {
+          "id": "pollination_weather",
+          "prompt": "Why should releases be postponed when strong winds are forecast?",
+          "options": ["Wind reduces pollen viability", "Beetles are blown away from target palms", "Wind removes protective wax", "Wind raises humidity too high"],
+          "correct_index": 1,
+          "explanation": "Gusts above 10 km/h scatter the weevils, leading to fewer visits per female spikelet."
+        },
+        {
+          "id": "pollination_male_stage",
+          "prompt": "What signals the start of peak pollen shed on male spikelets?",
+          "options": ["When spikelets turn brown", "When stamens release a sweet scent", "When fronds droop", "After sunset"],
+          "correct_index": 1,
+          "explanation": "Freshly opened stamens emit a sweet smell and begin shedding pollen for about 36 hours."
+        },
+        {
+          "id": "pollination_log",
+          "prompt": "Why log anthesis stages three days in advance?",
+          "options": ["To estimate fertilizer use", "To coordinate crew rotations", "To plan pesticide spraying", "To set irrigation schedules"],
+          "correct_index": 1,
+          "explanation": "Knowing which blocks will peak soon helps crews rotate efficiently without missing receptive blooms."
+        },
+        {
+          "id": "pollination_beetle_care",
+          "prompt": "How are beetle rearing boxes kept effective?",
+          "options": ["By storing them in direct sun", "By replacing bait daily and keeping them humid", "By sealing air vents", "By freezing them overnight"],
+          "correct_index": 1,
+          "explanation": "Shaded, humid boxes with fresh bait keep weevils active for release."
+        }
+      ]
+    },
+    "fertilization": {
+      "title": "Fertilization Zone Quiz",
+      "pass_score": 4,
+      "questions": [
+        {
+          "id": "fertilizer_split",
+          "prompt": "How often should the 0.8 kg per palm fertilizer mix be applied?",
+          "options": ["Once yearly", "Twice yearly", "Three times yearly", "Monthly"],
+          "correct_index": 2,
+          "explanation": "Split the dosage into three rounds to align with nutrient demand and reduce leaching."
+        },
+        {
+          "id": "fertilizer_ph",
+          "prompt": "At what soil pH should dolomite be recommended?",
+          "options": ["Above 5.5", "Between 5.0 and 5.5", "Below 4.5", "Exactly 6.0"],
+          "correct_index": 2,
+          "explanation": "Dolomite at 1.5 t/ha helps when pH dips below 4.5 to buffer acidity."
+        },
+        {
+          "id": "fertilizer_rain",
+          "prompt": "Why avoid fertilizing before heavy rain?",
+          "options": ["It makes palms grow too fast", "Nutrients leach away reducing efficiency", "It causes fronds to burn", "It attracts pests"],
+          "correct_index": 1,
+          "explanation": "Rain above 15 mm soon after application washes nutrients away before roots can use them."
+        },
+        {
+          "id": "fertilizer_leaf",
+          "prompt": "Which frond is sampled for tissue analysis?",
+          "options": ["Frond 1", "Frond 9", "Frond 17", "Frond 33"],
+          "correct_index": 2,
+          "explanation": "Frond 17 provides consistent, comparable nutrient readings across palms."
+        },
+        {
+          "id": "fertilizer_safety",
+          "prompt": "What should be checked in the protective gear locker?",
+          "options": ["Fuel inventory", "Moisture damage on stored fertilizers", "Tool calibration", "Seedling inventory"],
+          "correct_index": 1,
+          "explanation": "Clumped or damp fertilizer indicates moisture ingress, lowering nutrient quality."
+        }
+      ]
+    },
+    "timeline": {
+      "title": "Cultivation Timeline Quiz",
+      "pass_score": 4,
+      "questions": [
+        {
+          "id": "timeline_nursery",
+          "prompt": "How long do seedlings typically stay under shade nets?",
+          "options": ["30 days", "60 days", "90 days", "120 days"],
+          "correct_index": 2,
+          "explanation": "Nursery seedlings remain under shade nets for about 90 days before shifting."
+        },
+        {
+          "id": "timeline_transplant",
+          "prompt": "When are seedlings field transplanted?",
+          "options": ["At 3 months with 2 fronds", "At 6 months with 4 fronds", "At 10–12 months with 5–7 fronds", "At 18 months with 10 fronds"],
+          "correct_index": 2,
+          "explanation": "Ideal field planting occurs at 10–12 months when palms show 5–7 healthy fronds."
+        },
+        {
+          "id": "timeline_spacing",
+          "prompt": "What spacing pattern keeps palms evenly distributed?",
+          "options": ["Rectangular 6 m x 9 m", "Equilateral triangles 9 m apart", "Row spacing 12 m", "Random holes"],
+          "correct_index": 1,
+          "explanation": "Equilateral triangles spaced 9 m apart optimize light capture and accessibility."
+        },
+        {
+          "id": "timeline_pruning",
+          "prompt": "Why maintain about 40 functional fronds?",
+          "options": ["To reduce height", "To maintain photosynthetic area and reduce pests", "To increase windbreak", "To ease irrigation"],
+          "correct_index": 1,
+          "explanation": "Proper pruning preserves photosynthesis and limits pest harbors."
+        },
+        {
+          "id": "timeline_harvest",
+          "prompt": "Which cue indicates a bunch is ready to harvest?",
+          "options": ["No loose fruits", "One or two loose fruits on the ground", "All fruits still green", "The bunch has dried"],
+          "correct_index": 1,
+          "explanation": "1–2 loose fruits on the ground signal ripe bunches with optimal oil recovery."
+        }
+      ]
+    },
+    "production": {
+      "title": "Production & Prices Quiz",
+      "pass_score": 4,
+      "questions": [
+        {
+          "id": "production_ffb",
+          "prompt": "What does FFB stand for?",
+          "options": ["Fresh Fruit Bunch", "Fertilizer Field Balance", "Frond Fiber Bulk", "Field Fuel Barrel"],
+          "correct_index": 0,
+          "explanation": "FFB refers to Fresh Fruit Bunch, the harvested unit sent to the mill."
+        },
+        {
+          "id": "production_oer",
+          "prompt": "What is a typical target for oil extraction rate (OER)?",
+          "options": ["10%", "15%", "21%", "35%"],
+          "correct_index": 2,
+          "explanation": "Operations often target OER around 21% for efficient processing."
+        },
+        {
+          "id": "production_pricing",
+          "prompt": "Why compare CPO and PKO prices on the board?",
+          "options": ["To set irrigation schedules", "To decide when to accelerate or slow harvesting", "To plan fertilizer blending", "To adjust worker shifts"],
+          "correct_index": 1,
+          "explanation": "Price comparisons help determine whether to harvest aggressively or delay briefly."
+        },
+        {
+          "id": "production_records",
+          "prompt": "What happens if yield dips more than 8% from expectations?",
+          "options": ["An alert is shown for investigation", "Palms are automatically pruned", "Fertilizer is reduced", "The mill shuts down"],
+          "correct_index": 0,
+          "explanation": "The dashboard alerts managers to investigate productivity shortfalls."
+        },
+        {
+          "id": "production_time",
+          "prompt": "Why must FFB reach the mill within 24 hours?",
+          "options": ["To avoid weight loss", "To reduce transport costs", "To prevent free fatty acid spikes", "To align with labor shifts"],
+          "correct_index": 2,
+          "explanation": "Delays increase free fatty acids, reducing oil quality and yield."
+        }
+      ]
+    }
+  }
+}

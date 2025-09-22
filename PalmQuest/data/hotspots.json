@@ -1,0 +1,204 @@
+{
+  "hotspots": [
+    {
+      "id": "pollination_female",
+      "zone": "pollination",
+      "title": "Female Inflorescence Ready",
+      "text": "The female inflorescence blooms for just two dawns; receptive stigmas glisten when humidity stays high. Trainees note this golden window and deploy pollinating weevils before mid-morning heat lowers success.",
+      "icon": "res://assets/icons/pollination.svg",
+      "position": [8.5, 0.5, 6.2],
+      "mini_game_id": "pollination_catcher",
+      "gallery": []
+    },
+    {
+      "id": "pollination_male",
+      "zone": "pollination",
+      "title": "Male Spikelet Stage",
+      "text": "Male spikelets shed pollen clouds for roughly 36 hours. Freshly opened stamens smell sweet and attract Elaeidobius weevils. Record the start time here to sync your release of collected pollen for controlled trials.",
+      "icon": "res://assets/icons/pollination.svg",
+      "position": [4.0, 0.5, -3.5],
+      "mini_game_id": "pollination_catcher",
+      "gallery": []
+    },
+    {
+      "id": "pollination_beetle",
+      "zone": "pollination",
+      "title": "Pollinator Shelter Box",
+      "text": "Rearing boxes keep beetles shaded, hydrated, and dust-free. Inspect humidity pads and replace fermenting fruit bait daily so released weevils stay vigorous enough to navigate dense frond canopies.",
+      "icon": "res://assets/icons/pollination.svg",
+      "position": [1.0, 0.5, 10.0],
+      "mini_game_id": "pollination_catcher",
+      "gallery": []
+    },
+    {
+      "id": "pollination_weather",
+      "zone": "pollination",
+      "title": "Weather Alert Kiosk",
+      "text": "Light rain helps pollen adhere, while downpours wash grains away. Track dawn dew points here and postpone releases if winds exceed 10 km/h; gusts scatter beetles and reduce visits per female spikelet.",
+      "icon": "res://assets/icons/pollination.svg",
+      "position": [-5.5, 0.5, 2.0],
+      "mini_game_id": null,
+      "gallery": []
+    },
+    {
+      "id": "pollination_timeline",
+      "zone": "pollination",
+      "title": "Anthesis Planner Board",
+      "text": "Use the planner to log anthesis stages: pre-opening, receptive, and senescent. Monitoring three days in advance ensures your pollination crews rotate efficiently between blocks without missing peak bloom.",
+      "icon": "res://assets/icons/pollination.svg",
+      "position": [-2.0, 0.5, -6.5],
+      "mini_game_id": null,
+      "gallery": []
+    },
+    {
+      "id": "fertilizer_station",
+      "zone": "fertilization",
+      "title": "Bulk Blend Mixer",
+      "text": "Blend water-soluble urea with muriate of potash in equal bands for palms four to six years old. Target 0.8 kg per palm split thrice yearly and adjust when leaf analysis shows nitrogen above 2.8%.",
+      "icon": "res://assets/icons/fertilizer.svg",
+      "position": [14.0, 0.5, -4.0],
+      "mini_game_id": "fertilizer_mixer",
+      "gallery": []
+    },
+    {
+      "id": "fertilizer_acidity",
+      "zone": "fertilization",
+      "title": "Soil Acidity Probe",
+      "text": "Lateritic soils drift acidic; keep pH near 5.0. This probe logs readings and recommends dolomite at 1.5 t/ha if pH drops below 4.5, protecting root uptake of potassium and magnesium.",
+      "icon": "res://assets/icons/fertilizer.svg",
+      "position": [18.0, 0.5, 2.5],
+      "mini_game_id": null,
+      "gallery": []
+    },
+    {
+      "id": "fertilizer_rain",
+      "zone": "fertilization",
+      "title": "Rainfall Radar Drum",
+      "text": "Nutrient efficiency sinks when heavy rain arrives within six hours of application. Check the radar drum for approaching storms; if the gauge expects 15 mm or more, reschedule to conserve inputs.",
+      "icon": "res://assets/icons/fertilizer.svg",
+      "position": [11.5, 0.5, 6.0],
+      "mini_game_id": null,
+      "gallery": []
+    },
+    {
+      "id": "fertilizer_leaf_sample",
+      "zone": "fertilization",
+      "title": "Frond 17 Sampling Rack",
+      "text": "Tissue sampling from frond 17 shows seasonal nutrient status. This rack teaches proper leaflet selection, drying, and labeling steps so lab diagnostics translate to precise fertilizer prescriptions.",
+      "icon": "res://assets/icons/fertilizer.svg",
+      "position": [16.5, 0.5, 9.0],
+      "mini_game_id": "fertilizer_mixer",
+      "gallery": []
+    },
+    {
+      "id": "fertilizer_safety",
+      "zone": "fertilization",
+      "title": "Protective Gear Locker",
+      "text": "Always issue gloves, respirators, and eye shields when handling dustier compound fertilizers. Inspect storage for clumped material that signals moisture ingress and degraded nutrient concentration.",
+      "icon": "res://assets/icons/fertilizer.svg",
+      "position": [9.0, 0.5, 11.0],
+      "mini_game_id": null,
+      "gallery": []
+    },
+    {
+      "id": "timeline_nursery",
+      "zone": "timeline",
+      "title": "Nursery Germination Beds",
+      "text": "Seeds soak, preheat, and sprout under shade nets for 90 days. Rotate trays weekly to maintain even moisture, and discard seedlings lacking a straight plumule to keep future field stands uniform.",
+      "icon": "res://assets/icons/timeline.svg",
+      "position": [-12.0, 0.5, -10.5],
+      "mini_game_id": null,
+      "gallery": []
+    },
+    {
+      "id": "timeline_field_planting",
+      "zone": "timeline",
+      "title": "Immature Field Plot",
+      "text": "Transplanting occurs at 10 to 12 months when seedlings show 5 to 7 fronds. Align palms on equilateral triangles 9 meters apart and mulch generously to suppress weeds during juvenile growth.",
+      "icon": "res://assets/icons/timeline.svg",
+      "position": [-16.0, 0.5, -2.0],
+      "mini_game_id": "harvest_timing",
+      "gallery": []
+    },
+    {
+      "id": "timeline_pruning",
+      "zone": "timeline",
+      "title": "Pruning Workshop",
+      "text": "Proper pruning removes senescent fronds just below fresh fruit bunches. Follow the clock-face method to retain 40 functional fronds; this maintains photosynthetic area and lowers pest harbors.",
+      "icon": "res://assets/icons/timeline.svg",
+      "position": [-9.0, 0.5, -14.0],
+      "mini_game_id": null,
+      "gallery": []
+    },
+    {
+      "id": "timeline_harvest",
+      "zone": "timeline",
+      "title": "Harvest Cycle Briefing",
+      "text": "Palms enter steady production around year four. Schedule harvest rounds every 10 to 12 days, targeting bunches with 1 to 2 loose fruits on the ground to balance oil quality and yield.",
+      "icon": "res://assets/icons/timeline.svg",
+      "position": [-20.0, 0.5, -6.0],
+      "mini_game_id": "harvest_timing",
+      "gallery": []
+    },
+    {
+      "id": "timeline_processing",
+      "zone": "timeline",
+      "title": "Field Evacuation Depot",
+      "text": "Fresh fruit bunches must reach the mill within 24 hours to prevent free fatty acid spikes. Learn stacking patterns that keep bunches aerated and ready for evacuation trolleys.",
+      "icon": "res://assets/icons/timeline.svg",
+      "position": [-14.0, 0.5, -18.0],
+      "mini_game_id": null,
+      "gallery": []
+    },
+    {
+      "id": "production_dashboard",
+      "zone": "production",
+      "title": "Production Dashboard Hut",
+      "text": "This hut visualizes yields, oil extraction rates, and palm age distribution. Unlock it by earning badges from every zone and explore interactive charts that project monthly revenue versus targets.",
+      "icon": "res://assets/icons/dashboard.svg",
+      "position": [0.0, 0.5, -18.0],
+      "mini_game_id": null,
+      "gallery": []
+    },
+    {
+      "id": "production_ffb",
+      "zone": "production",
+      "title": "FFB Grading Station",
+      "text": "Inspect bunch size, fruitlet density, and bruise percentage to classify FFB quality. Accurate grading rewards harvesters and feeds reliable input for mill oil extraction calculations.",
+      "icon": "res://assets/icons/production.svg",
+      "position": [6.0, 0.5, -20.0],
+      "mini_game_id": null,
+      "gallery": []
+    },
+    {
+      "id": "production_prices",
+      "zone": "production",
+      "title": "Price Board",
+      "text": "Daily commodity updates pair crude palm oil prices with palm kernel oil benchmarks. Compare them against operating costs to decide when to accelerate harvesting or hold matured fields briefly.",
+      "icon": "res://assets/icons/production.svg",
+      "position": [-6.0, 0.5, -22.0],
+      "mini_game_id": null,
+      "gallery": []
+    },
+    {
+      "id": "production_oer",
+      "zone": "production",
+      "title": "OER Benchmark Poster",
+      "text": "Oil extraction rate targets hover near 21%. This poster shows how fruit ripeness, sterilizer steam, and threshing efficiency interact. Note how poor field sanitation elevates FFA and lowers OER.",
+      "icon": "res://assets/icons/production.svg",
+      "position": [10.0, 0.5, -24.0],
+      "mini_game_id": null,
+      "gallery": []
+    },
+    {
+      "id": "production_records",
+      "zone": "production",
+      "title": "Yield Records Desk",
+      "text": "Digital logbooks compare current block yields with five-year averages. Enter today's harvested tonnage to reveal alerts if productivity dips more than 8% from climatic-adjusted expectations.",
+      "icon": "res://assets/icons/production.svg",
+      "position": [-10.0, 0.5, -18.5],
+      "mini_game_id": null,
+      "gallery": []
+    }
+  ]
+}

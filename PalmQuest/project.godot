@@ -1,0 +1,39 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section]
+;   param=value
+;
+config_version=5
+
+[application]
+config/name="PalmQuest"
+run/main_scene="res://scenes/Main.tscn"
+config/icon="res://icon.svg"
+
+[display]
+window/size/width=1280
+window/size/height=720
+window/stretch/mode="viewport"
+window/stretch/aspect="keep"
+
+[rendering]
+quality/driver/driver_name="gl_compatibility"
+
+[input]
+move_forward={"deadzone":0.5,"events":[{"type":"joy_axis","axis":1,"device":0,"deadzone":0.5,"direction":-1},{"type":"key","keycode":87}]}
+move_back={"deadzone":0.5,"events":[{"type":"joy_axis","axis":1,"device":0,"deadzone":0.5,"direction":1},{"type":"key","keycode":83}]}
+move_left={"deadzone":0.5,"events":[{"type":"joy_axis","axis":0,"device":0,"deadzone":0.5,"direction":-1},{"type":"key","keycode":65}]}
+move_right={"deadzone":0.5,"events":[{"type":"joy_axis","axis":0,"device":0,"deadzone":0.5,"direction":1},{"type":"key","keycode":68}]}
+move_up={"deadzone":0.5,"events":[{"type":"key","keycode":32}]}
+sprint={"deadzone":0.5,"events":[{"type":"key","keycode":16777237}]}
+interact={"deadzone":0.5,"events":[{"type":"key","keycode":69}]}
+pause_menu={"deadzone":0.5,"events":[{"type":"key","keycode":16777217}]}
+open_dashboard={"deadzone":0.5,"events":[{"type":"key","keycode":80}]}
+
+[autoload]
+GameState="*res://scripts/singletons/game_state.gd"
+DataService="*res://scripts/singletons/data_service.gd"
+AudioService="*res://scripts/singletons/audio_service.gd"

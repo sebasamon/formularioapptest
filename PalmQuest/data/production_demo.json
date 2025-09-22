@@ -1,0 +1,21 @@
+{
+  "monthly": [
+    {"month": "Jan", "ffb_tonnes": 420, "oer_percent": 21.2, "cpo_price_usd": 930},
+    {"month": "Feb", "ffb_tonnes": 410, "oer_percent": 20.9, "cpo_price_usd": 915},
+    {"month": "Mar", "ffb_tonnes": 445, "oer_percent": 21.4, "cpo_price_usd": 940},
+    {"month": "Apr", "ffb_tonnes": 460, "oer_percent": 21.0, "cpo_price_usd": 925},
+    {"month": "May", "ffb_tonnes": 472, "oer_percent": 21.6, "cpo_price_usd": 950},
+    {"month": "Jun", "ffb_tonnes": 465, "oer_percent": 21.3, "cpo_price_usd": 942},
+    {"month": "Jul", "ffb_tonnes": 458, "oer_percent": 21.1, "cpo_price_usd": 938},
+    {"month": "Aug", "ffb_tonnes": 470, "oer_percent": 21.5, "cpo_price_usd": 948},
+    {"month": "Sep", "ffb_tonnes": 455, "oer_percent": 21.0, "cpo_price_usd": 932},
+    {"month": "Oct", "ffb_tonnes": 480, "oer_percent": 21.7, "cpo_price_usd": 955},
+    {"month": "Nov", "ffb_tonnes": 492, "oer_percent": 21.8, "cpo_price_usd": 960},
+    {"month": "Dec", "ffb_tonnes": 505, "oer_percent": 22.0, "cpo_price_usd": 968}
+  ],
+  "targets": {
+    "ffb_tonnes": 460,
+    "oer_percent": 21.2,
+    "cpo_price_usd": 940
+  }
+}

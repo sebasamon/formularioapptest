@@ -1,0 +1,68 @@
+[gd_scene load_steps=6 format=3]
+
+[ext_resource type="PackedScene" path="res://scenes/level.tscn" id="1"]
+[ext_resource type="PackedScene" path="res://scenes/ui_panel.tscn" id="2"]
+[ext_resource type="PackedScene" path="res://scenes/minigame.tscn" id="3"]
+[ext_resource type="PackedScene" path="res://scenes/quiz.tscn" id="4"]
+[ext_resource type="Script" path="res://scripts/main.gd" id="5"]
+
+[node name="Main" type="Node"]
+script = ExtResource("5")
+
+[node name="Level" parent="." instance=ExtResource("1")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="HUD" type="Control" parent="CanvasLayer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="TopBar" type="HBoxContainer" parent="CanvasLayer/HUD"]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 0.0
+margin_left = 12.0
+margin_top = 12.0
+margin_right = -12.0
+custom_minimum_size = Vector2(0, 40)
+separation = 12
+
+[node name="ProgressLabel" type="Label" parent="CanvasLayer/HUD/TopBar"]
+text = "Hotspots: 0/4"
+
+[node name="BestScoreLabel" type="Label" parent="CanvasLayer/HUD/TopBar"]
+text = "Mejor puntaje: 0"
+
+[node name="QuizButton" type="Button" parent="CanvasLayer/HUD/TopBar"]
+text = "Quiz"
+
+[node name="MuteButton" type="Button" parent="CanvasLayer/HUD/TopBar"]
+text = "Mute"
+
+[node name="Prompt" type="Label" parent="CanvasLayer/HUD"]
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = -80.0
+margin_right = 80.0
+margin_top = -60.0
+margin_bottom = -30.0
+horizontal_alignment = 1
+text = "E para interactuar"
+
+[node name="BadgeLabel" type="Label" parent="CanvasLayer/HUD"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -170.0
+margin_top = 60.0
+horizontal_alignment = 2
+text = "Badge: Quiz aprobado"
+visible = false
+
+[node name="UIPanel" parent="CanvasLayer" instance=ExtResource("2")]
+
+[node name="Minigame" parent="CanvasLayer" instance=ExtResource("3")]
+
+[node name="Quiz" parent="CanvasLayer" instance=ExtResource("4")]

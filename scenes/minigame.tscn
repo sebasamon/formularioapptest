@@ -1,0 +1,81 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/minigame.gd" id="1"]
+
+[node name="Minigame" type="Control"]
+script = ExtResource("1")
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 32.0
+margin_top = 32.0
+margin_right = -32.0
+margin_bottom = -32.0
+visible = false
+
+[node name="Panel" type="Panel" parent="."]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 16.0
+margin_top = 16.0
+margin_right = -16.0
+margin_bottom = -16.0
+spacing = 10.0
+
+[node name="Header" type="HBoxContainer" parent="Panel/VBoxContainer"]
+custom_minimum_size = Vector2(0, 28)
+
+[node name="TimerLabel" type="Label" parent="Panel/VBoxContainer/Header"]
+text = "Tiempo: 0"
+size_flags_horizontal = 3
+
+[node name="ScoreLabel" type="Label" parent="Panel/VBoxContainer/Header"]
+text = "Puntaje: 0"
+size_flags_horizontal = 3
+horizontal_alignment = 2
+
+[node name="StatusLabel" type="Label" parent="Panel/VBoxContainer"]
+text = "Presiona Iniciar"
+autowrap_mode = 2
+
+[node name="StartHint" type="Label" parent="Panel/VBoxContainer"]
+text = "Selecciona racimos verdes para sumar puntos"
+autowrap_mode = 2
+horizontal_alignment = 1
+
+[node name="BunchContainer" type="HBoxContainer" parent="Panel/VBoxContainer"]
+custom_minimum_size = Vector2(0, 80)
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 1
+separation = 12
+
+[node name="Bunch1" type="Button" parent="Panel/VBoxContainer/BunchContainer"]
+custom_minimum_size = Vector2(80, 80)
+text = ""
+
+[node name="Bunch2" type="Button" parent="Panel/VBoxContainer/BunchContainer"]
+custom_minimum_size = Vector2(80, 80)
+text = ""
+
+[node name="Bunch3" type="Button" parent="Panel/VBoxContainer/BunchContainer"]
+custom_minimum_size = Vector2(80, 80)
+text = ""
+
+[node name="FinishPanel" type="VBoxContainer" parent="Panel/VBoxContainer"]
+visible = false
+spacing = 8.0
+alignment = 1
+
+[node name="RetryButton" type="Button" parent="Panel/VBoxContainer/FinishPanel"]
+text = "Reintentar"
+
+[node name="ExitButton" type="Button" parent="Panel/VBoxContainer/FinishPanel"]
+text = "Volver"
